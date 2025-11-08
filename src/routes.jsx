@@ -1,7 +1,7 @@
 import App from "./App";
 import Login from "./pages/login";
 import Signup from "./pages/signin";
-
+import Blog from "./pages/blog";
 const routes = [
     {
         path: '/',
@@ -14,6 +14,10 @@ const routes = [
             {
                 path: '/signup',
                 element: <Signup />
+            },
+            {
+                 path: '/blog',
+                element: <Blog />
             }
         ]
     },
