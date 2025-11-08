@@ -23,7 +23,7 @@ const Login = () => {
     return (
         <>
             <form onSubmit={login}>
-                <input type="text" name="username" placeholder="usernames" onChange={(e)=>{setUsername(e.target.value)}}/>
+                <input type="text" name="username" placeholder="username" onChange={(e)=>{setUsername(e.target.value)}}/>
                 <input type="text" name="password" placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}/>
                 <button>Login</button>
             </form>
