@@ -1,14 +1,12 @@
 import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router'
-import routes from './routes'
 
-const router = createBrowserRouter(routes);
-
+import { Outlet } from 'react-router'
 function App() {
 
   return (
     <>
-      <RouterProvider router={router}></RouterProvider>
+      <h1>App works!</h1>
+      <Outlet></Outlet>
     </>
   )
 }
