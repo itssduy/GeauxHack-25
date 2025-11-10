@@ -1,6 +1,14 @@
 import { useState } from "react"
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth } from "../firebase";
+
+import { useNavigate } from "react-router";
 
 const Login = () => {
+    const navigate = useNavigate();
+    const provider = new GoogleAuthProvider();
+    
+
     // How react works is that everytime something changes on a page it rerenders
     // so if you have a regular variable
 
@@ -17,6 +25,15 @@ const Login = () => {
 
         console.log('username: ' + username);
         console.log('password: ' + password);
+
+    }
+
+    const googleLogin = ()=>{
+        signInWithPopup(auth, provider)
+            .then(()=>{
+                navigate('/')
+            })
+
     }
     
 
@@ -25,7 +42,8 @@ const Login = () => {
             <form onSubmit={login}>
                 <input type="text" name="username" placeholder="username" onChange={(e)=>{setUsername(e.target.value)}}/>
                 <input type="text" name="password" placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}/>
-                <button>Login</button>
+                <button type='submit'>Login</button>
+                <button type="button" onClick={googleLogin}>Login with google</button>
             </form>
         </>
     )
